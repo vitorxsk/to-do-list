@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>To-do List: Enem</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  :root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #4ade80; /* bright green for check highlight */
+    --heading-color: #e5e7eb; /* light gray */
+    --subheading-color: #9ca3af; /* medium gray */
+    --border-color: #222222;
+    --transition-duration: 0.3s;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+  }
+
+  .container {
+    max-width: 900px;
+    width: 100%;
+    background: #111111;
+    border-radius: 12px;
+    padding: 40px 35px 50px;
+    box-shadow: 0 0 20px rgb(74 222 128 / 0.25);
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 0 0 8px 0;
+    color: var(--accent-color);
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin: 0 0 24px 0;
+    color: var(--subheading-color);
+    font-style: italic;
+  }
+
+  .todo-list {
+    overflow-y: auto;
+    max-height: 75vh;
+    padding-right: 5px;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    margin: 30px 0 16px 0;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 6px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text-color);
+    transition: color var(--transition-duration);
+  }
+
+  li:hover {
+    color: var(--accent-color);
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2.5px solid var(--accent-color);
+    border-radius: 6px;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), border-color var(--transition-duration);
+  }
+  input[type="checkbox"]:focus {
+    outline-offset: 2px;
+    outline: 2px solid var(--accent-color);
+  }
+  input[type="checkbox"]:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+  input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--bg-color);
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Scrollbar styling for dark */
+  .todo-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  .todo-list::-webkit-scrollbar-track {
+    background: #111111;
+  }
+  .todo-list::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+    li {
+      font-size: 0.9rem;
+      padding: 8px 0;
+    }
+    .container {
+      padding: 30px 20px 40px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="Lista de tópicos para estudar para o ENEM">
+    <h1>To-do List: Enem</h1>
+    <h2>Feito especificamente para ValtinhoBR e Sr. Pijama</h2>
+    <section class="todo-list">
+
+      <h3>📚 HISTÓRIA</h3>
+      <ul>
+        <li><label><input type="checkbox" aria-label="Introdução" />Introdução</label></li>
+        <li><label><input type="checkbox" aria-label="Linha do tempo" />Linha do tempo</label></li>
+        <li><label><input type="checkbox" aria-label="Pré-História" />Pré-História</label></li>
+        <li><label><input type="checkbox" aria-label="Idade Antiga" />Idade Antiga</label></li>
+        <li><label><input type="checkbox" aria-label="Antiguidade Oriental" />Antiguidade Oriental</label></li>
+        <li><label><input type="checkbox" aria-label="Grécia" />Grécia</label></li>
+        <li><label><input type="checkbox" aria-label="Roma" />Roma</label></li>
+        <li><label><input type="checkbox" aria-label="Alta Idade Média" />Alta Idade Média</label></li>
+        <li><label><input type="checkbox" aria-label="Império Bizantino" />Império Bizantino</label></li>
+        <li><label><input type="checkbox" aria-label="Reinos Bárbaros" />Reinos Bárbaros</label></li>
+        <li><label><input type="checkbox" aria-label="Império dos Francos" />Império dos Francos</label></li>
+        <li><label><input type="checkbox" aria-label="Civilização Islâmica" />Civilização Islâmica</label></li>
+        <li><label><input type="checkbox" aria-label="Feudalismo" />Feudalismo</label></li>
+        <li><label><input type="checkbox" aria-label="Baixa Idade Média" />Baixa Idade Média</label></li>
+        <li><label><input type="checkbox" aria-label="Cruzadas" />Cruzadas</label></li>
+        <li><label><input type="checkbox" aria-label="Renascimento Comercial e Urbano" />Renascimento Comercial e Urbano</label></li>
+        <li><label><input type="checkbox" aria-label="Crise do Século XIV" />Crise do Século XIV</label></li>
+        <li><label><input type="checkbox" aria-label="Monarquias Nacionais" />Monarquias Nacionais</label></li>
+        <li><label><input type="checkbox" aria-label="Aspectos Culturais" />Aspectos Culturais</label></li>
+        <li><label><input type="checkbox" aria-label="Idade Moderna" />Idade Moderna</label></li>
+        <li><label><input type="checkbox" aria-label="Renascimento Cultural" />Renascimento Cultural</label></li>
+        <li><label><input type="checkbox" aria-label="Reforma Protestante e Contrarreforma" />Reforma Protestante e Contrarreforma</label></li>
+        <li><label><input type="checkbox" aria-label="Absolutismo" />Absolutismo</label></li>
+        <li><label><input type="checkbox" aria-label="Mercantilismo" />Mercantilismo</label></li>
+        <li><label><input type="checkbox" aria-label="Expansão Marítima" />Expansão Marítima</label></li>
+        <li><label><input type="checkbox" aria-label="Civilizações Pré-Colombianas" />Civilizações Pré-Colombianas</label></li>
+        <li><label><input type="checkbox" aria-label="Colonização na América (Espanhola e Inglesa)" />Colonização na América (Espanhola e Inglesa)</label></li>
+        <li><label><input type="checkbox" aria-label="Revoluções Inglesas" />Revoluções Inglesas</label></li>
+        <li><label><input type="checkbox" aria-label="Iluminismo" />Iluminismo</label></li>
+        <li><label><input type="checkbox" aria-label="Marquês de Pombal" />Marquês de Pombal</label></li>
+        <li><label><input type="checkbox" aria-label="Revolução Industrial" />Revolução Industrial</label></li>
+        <li><label><input type="checkbox" aria-label="Independência dos EUA" />Independência dos EUA</label></li>
+        <li><label><input type="checkbox" aria-label="Idade Contemporânea" />Idade Contemporânea</label></li>
+        <li><label><input type="checkbox" aria-label="Revolução Francesa" />Revolução Francesa</label></li>
+        <li><label><input type="checkbox" aria-label="Era Napoleônica" />Era Napoleônica</label></li>
+        <li><label><input type="checkbox" aria-label="Independência do Haiti" />Independência do Haiti</label></li>
+        <li><label><input type="checkbox" aria-label="Congresso de Viena" />Congresso de Viena</label></li>
+        <li><label><input type="checkbox" aria-label="Expansão e Guerra de Secessão (EUA)" />Expansão e Guerra de Secessão (EUA)</label></li>
+        <li><label><input type="checkbox" aria-label="Revoluções de 1830 e 1848" />Revoluções de 1830 e 1848</label></li>
+        <li><label><input type="checkbox" aria-label="Ideologias do século XIX" />Ideologias do século XIX</label></li>
+        <li><label><input type="checkbox" aria-label="Unificações" />Unificações</label></li>
+        <li><label><input type="checkbox" aria-label="Segunda Revolução Industrial" />Segunda Revolução Industrial</label></li>
+        <li><label><input type="checkbox" aria-label="Neocolonialismo" />Neocolonialismo</label></li>
+        <li><label><input type="checkbox" aria-label="Guerras Mundiais" />Guerras Mundiais</label></li>
+        <li><label><input type="checkbox" aria-label="Revolução Russa e Stalinismo" />Revolução Russa e Stalinismo</label></li>
+        <li><label><input type="checkbox" aria-label="Nazifascismo" />Nazifascismo</label></li>
+        <li><label><input type="checkbox" aria-label="Guerra Fria" />Guerra Fria</label></li>
+        <li><label><input type="checkbox" aria-label="Revolução Cubana" />Revolução Cubana</label></li>
+        <li><label><input type="checkbox" aria-label="Populismo e Reformas na América Latina" />Populismo e Reformas na América Latina</label></li>
+        <li><label><input type="checkbox" aria-label="Descolonização Afro-Asiática" />Descolonização Afro-Asiática</label></li>
+        <li><label><input type="checkbox" aria-label="Revolução Chinesa" />Revolução Chinesa</label></li>
+        <li><label><input type="checkbox" aria-label="Brasil Colônia" />Brasil Colônia</label></li>
+        <li><label><input type="checkbox" aria-label="Período Pré-Colonial" />Período Pré-Colonial</label></li>
+        <li><label><input type="checkbox" aria-label="Economia Açucareira, Pecuária, Lavouras" />Economia Açucareira, Pecuária, Lavouras</label></li>
+        <li><label><input type="checkbox" aria-label="União Ibérica" />União Ibérica</label></li>
+        <li><label><input type="checkbox" aria-label="Invasões Holandesas" />Invasões Holandesas</label></li>
+        <li><label><input type="checkbox" aria-label="Expansão Territorial" />Expansão Territorial</label></li>
+        <li><label><input type="checkbox" aria-label="Economia Mineradora" />Economia Mineradora</label></li>
+        <li><label><input type="checkbox" aria-label="Revoltas e Movimentos Emancipacionistas" />Revoltas e Movimentos Emancipacionistas</label></li>
+        <li><label><input type="checkbox" aria-label="Família Real no Brasil" />Família Real no Brasil</label></li>
+        <li><label><input type="checkbox" aria-label="Independência" />Independência</label></li>
+        <li><label><input type="checkbox" aria-label="Brasil Império" />Brasil Império</label></li>
+        <li><label><input type="checkbox" aria-label="Primeiro Reinado" />Primeiro Reinado</label></li>
+        <li><label><input type="checkbox" aria-label="Período Regencial" />Período Regencial</label></li>
+        <li><label><input type="checkbox" aria-label="Segundo Reinado" />Segundo Reinado</label></li>
+        <li><label><input type="checkbox" aria-label="Brasil República" />Brasil República</label></li>
+        <li><label><input type="checkbox" aria-label="República da Espada" />República da Espada</label></li>
+        <li><label><input type="checkbox" aria-label="República das Oligarquias (Economia e Movimentos Sociais)" />República das Oligarquias (Economia e Movimentos Sociais)</label></li>
+        <li><label><input type="checkbox" aria-label="Era Vargas" />Era Vargas</label></li>
+        <li><label><input type="checkbox" aria-label="Governo Dutra" />Governo Dutra</label></li>
+        <li><label><input type="checkbox" aria-label="Governo Vargas (2º)" />Governo Vargas (2º)</label></li>
+        <li><label><input type="checkbox" aria-label="JK, Jânio, Jango" />JK, Jânio, Jango</label></li>
+        <li><label><input type="checkbox" aria-label="Regime Militar" />Regime Militar</label></li>
+        <li><label><input type="checkbox" aria-label="Nova República" />Nova República</label></li>
+      </ul>
+
+      <h3>🌍 GEOGRAFIA</h3>
+      <ul>
+        <li><label><input type="checkbox" aria-label="Geografia Física" />Geografia Física</label></li>
+        <li><label><input type="checkbox" aria-label="Astronomia" />Astronomia</label></li>
+        <li><label><input type="checkbox" aria-label="Geologia" />Geologia</label></li>
+        <li><label><input type="checkbox" aria-label="Cartografia" />Cartografia</label></li>
+        <li><label><input type="checkbox" aria-label="Clima, Vegetação, Hidrografia" />Clima, Vegetação, Hidrografia</label></li>
+        <li><label><input type="checkbox" aria-label="Geografia Temática" />Geografia Temática</label></li>
+        <li><label><input type="checkbox" aria-label="Recursos Minerais" />Recursos Minerais</label></li>
+        <li><label><input type="checkbox" aria-label="Energia" />Energia</label></li>
+        <li><label><input type="checkbox" aria-label="Agropecuária" />Agropecuária</label></li>
+        <li><label><input type="checkbox" aria-label="Indústria" />Indústria</label></li>
+        <li><label><input type="checkbox" aria-label="Transporte" />Transporte</label></li>
+        <li><label><input type="checkbox" aria-label="Geografia Humana" />Geografia Humana</label></li>
+        <li><label><input type="checkbox" aria-label="População" />População</label></li>
+        <li><label><input type="checkbox" aria-label="Migrações" />Migrações</label></li>
+        <li><label><input type="checkbox" aria-label="Urbanização" />Urbanização</label></li>
+        <li><label><input type="checkbox" aria-label="Comércio" />Comércio</label></li>
+        <li><label><input type="checkbox" aria-label="Brasil no Mundo" />Brasil no Mundo</label></li>
+        <li><label><input type="checkbox" aria-label="Questões Ambientais" />Questões Ambientais</label></li>
+        <li><label><input type="checkbox" aria-label="Geografia Regional" />Geografia Regional</label></li>
+        <li><label><input type="checkbox" aria-label="Divisões Regionais" />Divisões Regionais</label></li>
+        <li><label><input type="checkbox" aria-label="Amazônia, Norte, Nordeste, Centro-Oeste, Sudeste, Sul" />Amazônia, Norte, Nordeste, Centro-Oeste, Sudeste, Sul</label></li>
+        <li><label><input type="checkbox" aria-label="Geografia Internacional" />Geografia Internacional</label></li>
+        <li><label><input type="checkbox" aria-label="América do Sul (Andinos, Platinos), México, América Central, EUA, Canadá" />América do Sul (Andinos, Platinos), México, América Central, EUA, Canadá</label></li>
+        <li><label><input type="checkbox" aria-label="África, Europa, Rússia, Oriente Médio, Ásia, Japão" />África, Europa, Rússia, Oriente Médio, Ásia, Japão</label></li>
+        <li><label><input type="checkbox" aria-label="Oceania: Austrália, Nova Zelândia, Ilhas do Pacífico" />Oceania: Austrália, Nova Zelândia, Ilhas do Pacífico</label></li>
+        <li><label><input type="checkbox" aria-label="Globalização" />Globalização</label></li>
+        <li><label><input type="checkbox" aria-label="Fases do Capitalismo" />Fases do Capitalismo</label></li>
+        <li><label><input type="checkbox" aria-label="Órgãos Internacionais" />Órgãos Internacionais</label></li>
+        <li><label><input type="checkbox" aria-label="Blocos Supranacionais" />Blocos Supranacionais</label></li>
+        <li><label><input type="checkbox" aria-label="Conflitos Internacionais e Regionais" />Conflitos Internacionais e Regionais</label></li>
+        <li><label><input type="checkbox" aria-label="EUA (Guerra ao Terror), Ex-Iugoslávia, Rússia" />EUA (Guerra ao Terror), Ex-Iugoslávia, Rússia</label></li>
+        <li><label><input type="checkbox" aria-label="Índia x Paquistão, Israel x Palestina" />Índia x Paquistão, Israel x Palestina</label></li>
+        <li><label><input type="checkbox" aria-label="Conflitos na Espanha, Irlanda, África, China, Oriente Médio" />Conflitos na Espanha, Irlanda, África, China, Oriente Médio</label></li>
+      </ul>
+
+      <h3>🧬 BIOLOGIA</h3>
+      <ul>
+        <li><label><input type="checkbox" aria-label="Introdução" />Introdução</label></li>
+        <li><label><input type="checkbox" aria-label="Conceitos gerais e Bioquímica" />Conceitos gerais e Bioquímica</label></li>
+        <li><label><input type="checkbox" aria-label="Citologia" />Citologia</label></li>
+        <li><label><input type="checkbox" aria-label="Célula, Envoltórios, Citoplasma, Núcleo" />Célula, Envoltórios, Citoplasma, Núcleo</label></li>
+        <li><label><input type="checkbox" aria-label="Ciclo e Divisão Celular, Gametogênese" />Ciclo e Divisão Celular, Gametogênese</label></li>
+        <li><label><input type="checkbox" aria-label="Bioenergética" />Bioenergética</label></li>
+        <li><label><input type="checkbox" aria-label="Fermentação, Respiração, Fotossíntese, Quimiossíntese" />Fermentação, Respiração, Fotossíntese, Quimiossíntese</label></li>
+        <li><label><input type="checkbox" aria-label="Controle Celular e Genética" />Controle Celular e Genética</label></li>
+        <li><label><input type="checkbox" aria-label="Código Genético" />Código Genético</label></li>
+        <li><label><input type="checkbox" aria-label="Mutações, Leis de Mendel" />Mutações, Leis de Mendel</label></li>
+        <li><label><input type="checkbox" aria-label="Polialelia, Herança ligada ao sexo" />Polialelia, Herança ligada ao sexo</label></li>
+        <li><label><input type="checkbox" aria-label="Linkage, Interações gênicas, Citogenética" />Linkage, Interações gênicas, Citogenética</label></li>
+        <li><label><input type="checkbox" aria-label="Genética de Populações" />Genética de Populações</label></li>
+        <li><label><input type="checkbox" aria-label="Histologia e Fisiologia Humana" />Histologia e Fisiologia Humana</label></li>
+        <li><label><input type="checkbox" aria-label="Tecidos (Epitelial, Conjuntivo, Muscular, Nervoso)" />Tecidos (Epitelial, Conjuntivo, Muscular, Nervoso)</label></li>
+        <li><label><input type="checkbox" aria-label="Sistemas (Digestório, Respiratório, Circulatório, Excretor, etc.)" />Sistemas (Digestório, Respiratório, Circulatório, Excretor, etc.)</label></li>
+        <li><label><input type="checkbox" aria-label="Reprodução e Embriologia" />Reprodução e Embriologia</label></li>
+        <li><label><input type="checkbox" aria-label="DSTs, Contraceptivos" />DSTs, Contraceptivos</label></li>
+        <li><label><input type="checkbox" aria-label="Embriologia" />Embriologia</label></li>
+        <li><label><input type="checkbox" aria-label="Microbiologia" />Microbiologia</label></li>
+        <li><label><input type="checkbox" aria-label="Vírus, Príons" />Vírus, Príons</label></li>
+        <li><label><input type="checkbox" aria-label="Bactérias, Protistas, Fungos" />Bactérias, Protistas, Fungos</label></li>
+        <li><label><input type="checkbox" aria-label="Reino Animal" />Reino Animal</label></li>
+        <li><label><input type="checkbox" aria-label="Poríferos a Cordados" />Poríferos a Cordados</label></li>
+        <li><label><input type="checkbox" aria-label="Comparativo e resumo geral" />Comparativo e resumo geral</label></li>
+        <li><label><input type="checkbox" aria-label="Reino Vegetal e Morfofisiologia" />Reino Vegetal e Morfofisiologia</label></li>
+        <li><label><input type="checkbox" aria-label="Briófitas, Pteridófitas, Gimnospermas, Angiospermas" />Briófitas, Pteridófitas, Gimnospermas, Angiospermas</label></li>
+        <li><label><input type="checkbox" aria-label="Tecidos, Trocas gasosas, Hormônios" />Tecidos, Trocas gasosas, Hormônios</label></li>
+        <li><label><input type="checkbox" aria-label="Biotecnologia e Engenharia Genética" />Biotecnologia e Engenharia Genética</label></li>
+        <li><label><input type="checkbox" aria-label="Biotecnologia" />Biotecnologia</label></li>
+        <li><label><input type="checkbox" aria-label="Engenharia Genética" />Engenharia Genética</label></li>
+        <li><label><input type="checkbox" aria-label="Origem da Vida e Evolução" />Origem da Vida 
